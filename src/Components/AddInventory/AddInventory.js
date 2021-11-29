@@ -1,4 +1,5 @@
 import {React, useState } from 'react'
+import url from '../../api/api'
 
 export default function AddInventory() {
     const [body, setBody] = useState({
@@ -20,7 +21,7 @@ export default function AddInventory() {
     function handleSubmit(event){
         event.preventDefault()
         console.log(body)
-        fetch("http://localhost:3330/addItem", {
+        fetch(`${url}/addItem`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body)
