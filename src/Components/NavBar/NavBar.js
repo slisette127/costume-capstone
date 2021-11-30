@@ -5,9 +5,13 @@ import classes from './NavBar.module.css'
 export default function NavBar() {
     return (
         <div className={classes.container}>
-            <Link to="/dashboard">Dashboard</Link>
-            <Link exact to="/">Login</Link>
-            <Link to="/additem">Add Item</Link>
+            <h1 className={classes.gridItem}></h1>
+
+            <div className={classes.babyContainer}> 
+                <Link to="/dashboard"><div>Dashboard</div></Link>
+                <Link exact to="/"><div>Login</div></Link>
+                <Link to="/additem"><div>Add Item</div></Link>
+            </div>
 
         </div>
     )

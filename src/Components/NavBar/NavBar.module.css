@@ -1,5 +1,37 @@
 .container {
     width: 100%;
     height: 300px;
-    background-color: aquamarine;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 80% auto;
+    grid-template-columns: auto;
+}
+
+.gridItem {
+    background-image: url('../../logo2.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    grid-row: 1;
+}
+
+.babyContainer {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;   
+    grid-row: 2;
+    background-color: black;
+}
+
+.babyContainer div{
+    color: white;
+    padding: 8px;
+    font-size: 15px;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin: 5px;
 }
