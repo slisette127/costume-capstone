@@ -9,8 +9,8 @@ export default function Router() {
     return (
         <Switch>
             <Route exact path="/" component={LogIn} />
-            <Route exact path="/dashboard" component={Inventory} />
-            <Route exact path="/additem" component={AddInventory} />
+            <Route path="/inventory" component={Inventory} />
+            <Route path="/additem" component={AddInventory} />
         </Switch>
     )
 }
