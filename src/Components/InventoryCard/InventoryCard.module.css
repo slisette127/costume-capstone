@@ -1,0 +1,31 @@
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto; 
+   
+    width: 300px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid black;
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid black;
+}
+
+.img_container {
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+}
+
+.text_container {
+    grid-row: 2;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+}

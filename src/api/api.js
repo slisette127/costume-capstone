@@ -1,3 +1,3 @@
-const url = "http://localhost:3330"
+const url = "https://costume-api.herokuapp.com"
 
 export default url

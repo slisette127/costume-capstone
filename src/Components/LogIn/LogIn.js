@@ -46,7 +46,7 @@ export default function LogIn() {
                 <br/>
                      <button type="submit">Log In</button>
                 </form>
-                </div>
+            </div>
         </div>
     )
 }
