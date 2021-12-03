@@ -12,7 +12,9 @@ export default function InventoryCard(props) {
                    <h1>{props.i.Name} </h1>
                    {props.i.Description}
                    <br/>
-                   {props.i.Quantity} {props.i.Measurement}
+                   {props.i.Quantity} {props.i.Measurement} 
+                   <br/>
+                    <p>{`$${props.i.Cost}/${props.i.Measurement}`}</p>
             </div>
         </div>
     )

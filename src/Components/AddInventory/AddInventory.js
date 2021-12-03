@@ -6,6 +6,7 @@ export default function AddInventory() {
         Name: "",
         Description: "",
         Quantity: "",
+        Cost: "",
         Measurement: "Yards",
         ImageURL: ""
     })
@@ -34,6 +35,7 @@ export default function AddInventory() {
                 <input type="text" name="Name" placeholder="name" value={body.Name} onChange={handleChange} />
                 <textarea type="text" name="Description" placeholder="description" onChange={handleChange} />
                 <input type="number" name="Quantity" placeholder="quantity" onChange={handleChange} />
+                <input type="number" name="Cost" step="0.01" placeholder="cost" onChange={handleChange}/>
                 <select name="Measurement" value={body.Measurement} onChange={handleChange}>
                     <option>Yards</option>
                     <option>Each</option>
