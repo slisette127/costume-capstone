@@ -2,7 +2,7 @@
   "name": "new-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://slisette127.github.io/costume-capstone",
+  "homepage": "http://slisette127.github.io/costume-capstone",
   "dependencies": {
     "@react-google-maps/api": "^2.5.0",
     "@testing-library/jest-dom": "^5.15.1",
