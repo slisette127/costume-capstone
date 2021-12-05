@@ -1,5 +1,6 @@
 import {React, useState } from 'react'
 import url from '../../api/api'
+import classes from './AddInventory.module.css'
 
 export default function AddInventory() {
     const [body, setBody] = useState({
@@ -10,6 +11,15 @@ export default function AddInventory() {
         Measurement: "Yards",
         ImageURL: ""
     })
+
+    const [UserName, setUserName] = useState(localStorage.getItem("UserName"))
+
+    function getHeaders(){
+        const headers = new Headers();
+        headers.append("Content-Type", "application/json")
+        headers.append("UserName", `${UserName}`)
+        return headers
+    }
 
     function handleChange(event){
         const {name, value} = event.target
@@ -22,15 +32,15 @@ export default function AddInventory() {
     function handleSubmit(event){
         event.preventDefault()
         console.log(body)
-        fetch(`${url}/addItem`, {
+        fetch(`http://localhost:3330/addItem`, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: getHeaders(),
             body: JSON.stringify(body)
           })
     }
 
     return (
-        <div>
+        <div className={classes.container}>
             <form onSubmit={handleSubmit}>
                 <input type="text" name="Name" placeholder="name" value={body.Name} onChange={handleChange} />
                 <textarea type="text" name="Description" placeholder="description" onChange={handleChange} />

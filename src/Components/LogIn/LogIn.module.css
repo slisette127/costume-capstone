@@ -19,13 +19,13 @@
 
 .leftSide {
     grid-column: 1;
-    float: left;
-    object-fit: cover;
-    overflow: hidden;   
+    object-fit: fill;
+    height: 600px;
+    width: auto;
 }
 
  .leftSide img {
-    width: 400px;
+    width: 400px;  
 
 } 
 

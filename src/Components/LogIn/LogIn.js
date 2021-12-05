@@ -9,9 +9,11 @@ export default function LogIn() {
     let history = useHistory();
 
     const [body, setBody] = useState({
-        Username: "",
-        Password: ""
+        UserName: "",
+        UserPassword: ""
     })
+
+    const [error, setError] = useState("")
 
     function handleChange(event){
         const {name, value} = event.target
@@ -24,7 +26,22 @@ export default function LogIn() {
     function handleSubmit(event){
         event.preventDefault()
         console.log(body)
-        history.push("/inventory")
+        fetch(`http://localhost:3330/login`, {
+            method: "POST", 
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify(body)
+        })
+        .then(response => {
+            console.log(response)
+            if(!response.ok){
+                throw Error('Usernamer/Password incorrect')
+            }
+            else return response.json()
+        })
+        .then(localStorage.setItem("loggedIn", "true"))
+        .then(localStorage.setItem("UserName", body.UserName))
+        .then( ()=>  history.push("./inventory") )
+        .catch((error) => setError(error.message))
     }
 
 
@@ -40,9 +57,11 @@ export default function LogIn() {
                 <p>Log in to access your personal inventory catalog</p>
                 <br/>
                 <form onSubmit={handleSubmit}>
-                    <input required type="text" name="Username" placeholder="Username" onChange={handleChange} />   
+                    <input required type="text" name="UserName" placeholder="Username" onChange={handleChange} />   
                 <br/>
-                    <input required type="password" name="Password" placeholder="Password" onChange={handleChange} />   
+                    <input required type="password" name="UserPassword" placeholder="Password" onChange={handleChange} />   
+                <br/>
+                {error}
                 <br/>
                      <button type="submit">Log In</button>
                 </form>

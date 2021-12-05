@@ -24,7 +24,7 @@ const markers = [
 
 ]
 
-export default function Maps() {
+export default function Maps(m) {
     return (
         <div>
             <LoadScript googleMapsApiKey="AIzaSyAVA4rcMV0PwCwvOOGJz6MjjZYFePJdv-E">
@@ -33,11 +33,12 @@ export default function Maps() {
                     center={{lat:31.1344, lng:-97.5247}}
                     zoom={8}
                 >
-                    {/* {markers.map(m => )} */}
-                    <Marker position={{lat:31.4994, lng:-97.1504}} 
-                            icon={{
-                                url:'/needle.png',}}
-                        />
+                    {markers.map((m) => ( 
+                    <Marker 
+                    position={{lat: m.lat, lng: m.lng}}
+                  
+                    /> 
+                    ))}
                 </GoogleMap>
             </LoadScript>
         </div>
