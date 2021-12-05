@@ -20,7 +20,7 @@ export default function Inventory() {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:3330/inventory`,{
+        fetch(`${url}/inventory`,{
             method: "GET", 
             headers: getHeaders()
         }

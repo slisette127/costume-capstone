@@ -32,7 +32,7 @@ export default function AddInventory() {
     function handleSubmit(event){
         event.preventDefault()
         console.log(body)
-        fetch(`http://localhost:3330/addItem`, {
+        fetch(`${url}/addItem`, {
             method: "POST",
             headers: getHeaders(),
             body: JSON.stringify(body)

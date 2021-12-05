@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import classes from './LogIn.module.css'
 import scissors from '../../scissors.jpg'
+import url from '../../api/api'
 
 
 export default function LogIn() {
@@ -26,7 +27,7 @@ export default function LogIn() {
     function handleSubmit(event){
         event.preventDefault()
         console.log(body)
-        fetch(`http://localhost:3330/login`, {
+        fetch(`${url}/login`, {
             method: "POST", 
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify(body)
