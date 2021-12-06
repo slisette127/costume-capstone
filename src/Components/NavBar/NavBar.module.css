@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+
 .container {
     width: 100%;
     height: 100%;
@@ -22,25 +23,33 @@
 
 .babyContainer {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 25px;   
     grid-row: 2;
-    background-color: rgb(31,32,35);
+    
 }
 
 .babyContainer div{
-    color: white;
     padding: 8px;
     font-size: 15px;
-    border: 2px solid white;
+    border: 2px solid #333333;
     border-radius: 15px;
     margin: 5px;
+    color: #333333;
 }
 
 
 @media  (max-width:400px) {
     .babyContainer {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        width: auto;
+        margin: 0;
+        gap: 0;
+    }
+    .babyContainer div{
+      font-size: 10px;
+      margin: 1px;
     }
 }

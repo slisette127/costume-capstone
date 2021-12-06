@@ -4,6 +4,7 @@ import AddInventory from './Components/AddInventory/AddInventory'
 import Inventory from './Components/Inventory/Inventory'
 import LogIn from './Components/LogIn/LogIn'
 import Maps from './Components/Maps/Maps'
+import NewUser from './Components/NewUser/NewUser'
 
 
 export default function Router() {
@@ -13,6 +14,7 @@ export default function Router() {
             <Route path="/inventory" component={Inventory} />
             <Route path="/additem" component={AddInventory} />
             <Route path="/shop" component={Maps}/>
+            <Route path="/newuser" component={NewUser}/>
         </Switch>
     )
 }

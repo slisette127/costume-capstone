@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import classes from './LogIn.module.css'
 import scissors from '../../scissors.jpg'
 import url from '../../api/api'
@@ -65,6 +65,10 @@ export default function LogIn() {
                 {error}
                 <br/>
                      <button type="submit">Log In</button>
+                     <Link to="/newuser">
+                        <p>new account here</p>
+                        
+                     </Link>
                 </form>
             </div>
         </div>

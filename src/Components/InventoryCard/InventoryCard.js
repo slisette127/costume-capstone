@@ -3,6 +3,7 @@ import classes from './InventoryCard.module.css'
 
 export default function InventoryCard(props) {
     return (
+        <div className={classes.card_container}>
         <div className={classes.container}>
             <div className={classes.img_container}>
                 <img src={props.i.ImageURL}/>
@@ -16,6 +17,7 @@ export default function InventoryCard(props) {
                    <br/>
                     <p>{`$${props.i.Cost}/${props.i.Measurement}`}</p>
             </div>
+        </div>
         </div>
     )
 }

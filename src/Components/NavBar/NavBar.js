@@ -30,6 +30,9 @@ export default function NavBar(props) {
                 
                 <Link to="/additem"><div>Add Item</div></Link>
                 {console.log(loggedIn)}
+
+                <Link to="/shop"><div>Shop</div></Link>
+                
             </div>
 
         </div>

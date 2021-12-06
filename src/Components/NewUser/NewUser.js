@@ -1,7 +1,16 @@
 import {useState} from "react";
+import url from "../../api/api";
+import { Link, useHistory } from 'react-router-dom'
+import NavBar from "../NavBar/NavBar";
+import picture from '../../register.jpg';
+import classes from './NewUser.module.css'
+import newuserpic from '../../newuser.jpg'
 
 
 function NewUser() {
+
+  let history = useHistory();
+
 
     const [user, setUser] = useState({
       UserName: '',
@@ -20,42 +29,45 @@ function NewUser() {
     function handleSubmit(e) {
       e.preventDefault()
       console.log(user)
-      fetch("http://localhost:3330/adduser", {
+      fetch(`${url}/adduser`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user)
       })
+      .then( ()=>  history.push("/") )
+
         ;
     }
 
     return (
-        <div className="App"
-          style={{
-            width:"300px",
-            margin:"20px auto auto auto",
-            border:"1px black solid",
-            borderRadius: '25px'
-          }}
-        >
-          <h1>Create a User</h1>
-          <form onSubmit={handleSubmit}
-            style={{
-              display:'flex',
-              flexDirection:'column',
-              alignItems:'center',
-              gap:'10px',
-              margin:"10px auto 10px auto"
-            }}
-          >    
-                <input type="text" name="UserName" onChange={(e)=>handleChange(e)} value={user.UserName}></input>
-                <input type="text" name="UserPassword" onChange={(e)=>handleChange(e)} value={user.UserPassword}></input>
-                <input type="text" name="UserEmail" onChange={(e)=>handleChange(e)} value={user.UserEmail}></input> 
-                <input type='submit'></input>
+      <div> 
+         <NavBar image={picture}/>
+        <div className={classes.container}>
+                <ol>How it works
+                  <li>Enter your information.</li>
+                  <li>Click "Submit"</li>
+                  <li>You will be automatically redirected to your personal Inventory Catalog.
+                  </li>
+                  <li>Add items to your catalog</li>
+                </ol>
+         
+          <form onSubmit={handleSubmit}>    
+                <input className={classes.nu_input} required type="text" name="UserName" placeholder="Name" onChange={(e)=>handleChange(e)} value={user.UserName}></input>
+
+                <input className={classes.nu_input} required type="password" name="UserPassword" placeholder="Password" onChange={(e)=>handleChange(e)} value={user.UserPassword}></input>
+
+                <input className={classes.nu_input} required type="email" name="UserEmail" placeholder="E-mail" onChange={(e)=>handleChange(e)} value={user.UserEmail}></input> 
+
+                <input className={classes.nu_input} type='submit'></input>
+
               </form>
+              <img className={classes.userimage} src={newuserpic} alt="mannequins"/>
+            </div>
+
             </div>
           );
         }
-        
+       
         export default NewUser;
         
   
