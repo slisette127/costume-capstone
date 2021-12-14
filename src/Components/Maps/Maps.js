@@ -49,21 +49,21 @@ export default function Maps(m) {
                 </div> 
                     <div className={classes.text_container}>
                         <div className={classes.jo_stores}> 
-                        <h2>Waco, TX</h2>
+                        <h2>JOANN Waco, TX</h2>
                         <p>4633 S. Jack Kultgen Expy Unit 104</p>
                         <p>Waco, TX 76706</p>
                                 <p>254-662-9689</p>      
                     </div>
                     
                         <div className={classes.jo_stores}> 
-                        <h2>Round Rock, TX</h2>
+                        <h2>JOANN Round Rock, TX</h2>
                         <p>201 University Oaks Blvd</p>
                         <p>Round Rock, TX 78665</p>
                                 <p>512-248-2156</p>      
                     </div>
                    
                         <div className={classes.jo_stores}> 
-                        <h2>Austin, TX</h2>
+                        <h2>JOANN Austin, TX</h2>
                         <p>10515 N Mopac Expy</p>
                         <p>Austin, TX 78759</p>
                                 <p>512-795-8086</p>      

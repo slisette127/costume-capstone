@@ -55,6 +55,7 @@ export default function LogIn() {
 
             <div className={classes.rightSide}>
                <h1 className={classes.header}>Welcome to Costume</h1>
+               <br/>
                 <p>Log in to access your personal inventory catalog</p>
                 <br/>
                 <form onSubmit={handleSubmit}>
@@ -65,8 +66,9 @@ export default function LogIn() {
                 {error}
                 <br/>
                      <button type="submit">Log In</button>
+                     <br/>
                      <Link to="/newuser">
-                        <p>new account here</p>
+                        <p>No Account? Register Here!</p>
                         
                      </Link>
                 </form>

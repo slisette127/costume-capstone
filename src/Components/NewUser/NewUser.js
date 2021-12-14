@@ -44,11 +44,11 @@ function NewUser() {
          <NavBar image={picture}/>
         <div className={classes.container}>
                 <ol>How it works
-                  <li>Enter your information.</li>
+                  <li>Enter your information</li>
                   <li>Click "Submit"</li>
-                  <li>You will be automatically redirected to your personal Inventory Catalog.
+                  <li>You will be automatically redirected to the Log In page
                   </li>
-                  <li>Add items to your catalog</li>
+                  <li>Add items to your inventory</li>
                 </ol>
          
           <form onSubmit={handleSubmit}>    

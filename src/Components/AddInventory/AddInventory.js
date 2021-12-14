@@ -75,6 +75,8 @@ export default function AddInventory() {
                 <div className={classes.img_container}>
                     <img src={bobbins} alt="bobbins"/>
                 </div>
+            
+
 
             </form>
         </div>
