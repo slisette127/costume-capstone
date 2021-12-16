@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import classes from './LogIn.module.css'
 import scissors from '../../scissors.jpg'
 import url from '../../api/api'
+import logo2 from '../../logo2.jpg'
 
 
 export default function LogIn() {
@@ -54,8 +55,9 @@ export default function LogIn() {
             </div>
 
             <div className={classes.rightSide}>
-               <h1 className={classes.header}>Welcome to Costume</h1>
-               <br/>
+               <h1 className={classes.header}>Welcome to</h1>
+               
+               <img src={logo2} alt="costume logo"></img>
                 <p>Log in to access your personal inventory catalog</p>
                 <br/>
                 <form onSubmit={handleSubmit}>
